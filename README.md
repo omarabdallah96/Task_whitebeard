@@ -9,7 +9,9 @@ git clone https://github.com/omarabdallah96/Task_whitebeard
 ```
 composer install
 ```
+## create database 
 
+Create database called today_news
 ## Migrate data
 
 ```
