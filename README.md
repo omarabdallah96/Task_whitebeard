@@ -16,18 +16,24 @@ composer install
 php artisan migrate:fresh --seed
 ```
 
-## run project
+## run vite 
 
 ```
 npm install && npm run dev
 ```
 
+## open new terminal and Run
 ```
 php artisan serve
+
 ```
 
 # Project Link
 
 ```
+
 http://127.0.0.1:8000/
+
+```
+
 ```
