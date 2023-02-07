@@ -87,20 +87,17 @@ class NewsController extends Controller
     public function show($id = null)
     {
         //
-        $url = url('/storage');
 
         $post = News::findOrFail($id);
-        $post_images = [];
-        $images = $post['images']->map(
-            function ($product) use ($url) {
-                $product->images_link = $url . '/' . $product->name;
-                return $product;
-            }
-        );
-        $post->images = $images;
 
 
-        // do something
+        $post->views += 1;
+
+        $post->save();
+
+
+
+
 
         return view('news.show', compact('post'));
     }
@@ -137,5 +134,17 @@ class NewsController extends Controller
     public function destroy(News $news)
     {
         //
+    }
+
+    public function like(Request $request)
+    {
+        $post = News::find($request->id);
+        if (!$post) {
+            return response()->json(['message' => 'post not found', 'success' => false], 404);
+        }
+
+        $post->likes += 1;
+        $post->save();
+        return response()->json(['message' => 'like added', 'success' => true], 201);
     }
 }

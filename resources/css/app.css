@@ -193,3 +193,8 @@ input[type="submit"] {
     max-height: 50px;
     max-height: 50px;
 }
+.like-btn {
+    background: none;
+    border: none;
+    max-width: 40px;
+}

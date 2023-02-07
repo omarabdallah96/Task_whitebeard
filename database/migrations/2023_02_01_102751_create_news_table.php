@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('content');
             $table->boolean('published')->default(true);
             $table->bigInteger('views')->default(0);
+            $table->integer('likes')->default(0);
 
 
             $table->unsignedBigInteger('created_by')->nullable();

@@ -26,6 +26,10 @@
             </div>
             <br>
             <p>{{ Str::of($new->content)->words(3, ' ...') }} <button id="new_{{$new->id}}" class="read-more read-more-button">Read More</button></p>
+
+            <button id="{{$new->id}}" class="like-btn">
+                <img src="https://img.icons8.com/material-outlined/24/null/filled-like.png" />
+            </button>
         </div>
         @empty
 

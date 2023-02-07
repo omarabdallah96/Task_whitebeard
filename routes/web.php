@@ -31,6 +31,7 @@ Auth::routes([
 
 Route::get('/', [NewsController::class, 'index'])->name('news.index');
 Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
+Route::post('/news-like', [NewsController::class, 'like'])->name('news.like');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('home');

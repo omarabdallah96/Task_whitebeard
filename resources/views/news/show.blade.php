@@ -21,8 +21,10 @@
 </div>
 
 <h3 class="post-share">
-    Share On Social Media
+    Share On Social Media         <span> <img src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/24/null/external-view-content-creator-tanah-basah-glyph-tanah-basah-2.png" />  {{$post->views}}</span>
+
 </h3>
+
 
 <!-- Post content -->
 <div>
@@ -50,12 +52,16 @@
 
 
     </div>
+
 </div>
 
 </div>
 <!-- Post content -->
 <div class="post-content">
-    <h1>{{$post->title}}</h1>
+    <h3>{{$post->title}}
+
+
+    </h3>
     <p>{{$post->content}}</p>
 </div>
 
@@ -70,7 +76,7 @@
     const links = document.querySelectorAll('button');
     $('button').on('click', function() {
         console.log(this)
-     
+
 
         var link = $(this).attr('data-url');
 

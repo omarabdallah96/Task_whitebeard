@@ -84,10 +84,48 @@
         </main>
     </div>
     <div class="footer">
-    <img src="https://img.icons8.com/ios/24/null/creative-commons-all-rights-reserved.png"/> 2023
+        <img src="https://img.icons8.com/ios/24/null/creative-commons-all-rights-reserved.png" /> 2023
     </div>
 </body>
 
 </html>
 
+
+<script>
+    $('.like-btn').on('click', function() {
+
+        data = {
+            'id': $(this).attr('id'),
+        }
+        liked = $(this).children('img').hasClass('liked')
+        if (liked) {
+            return console.log("liked")
+        }
+
+
+
+        like_btn = $(this)
+        $.ajax({
+            type: "POST",
+            url: "{{route('news.like')}}",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: data,
+            success: function(data, textStatus, jQxhr) {
+                console.log(data)
+
+                if (data.success) {
+                    console.log(like_btn)
+                    like_btn.empty()
+                    liked = ' <img class="liked" src="https://img.icons8.com/ios-filled/24/e74c3c/filled-like.png" />'
+                    like_btn.append(liked).show('slow');
+                }
+            },
+            error: function(jqXhr, textStatus, errorThrown) {
+                console.log(errorThrown);
+            }
+        });
+    })
+</script>
 @yield('script')
