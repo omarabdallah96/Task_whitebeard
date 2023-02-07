@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+    font-family: Arial;
+    padding: 20px;
+    background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    max-width: 75%;
+
+    grid-gap: 10px;
+}
+.leftcolumn > .grid-item {
+    width: 100%;
+    margin: 20px;
+    max-height: auto;
+}
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    position: relative;
+}
+
+/* Add a card effect for articles */
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .rightcolumn {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        display: grid;
+        grid-template-columns: auto;
+    }
+    .leftcolumn {
+        display: grid;
+        grid-template-columns: auto;
+        width: 100%;
+        max-width: 100%;
+    }
+    .leftcolumn > .grid-item {
+        width: 100%;
+        margin: 20px;
+        margin-left: 10px;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #d6eeee;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+input[type="submit"] {
+    width: 100%;
+    background-color: #4caf50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.header-popular {
+    display: flex;
+    justify-content: space-between;
+}
+.responsive-avatar {
+    width: 100%;
+    height: auto;
+}
+.popular {
+    max-height: 500px;
+    overflow-y: scroll;
+}
+/* Styles for the header image */
+.header-image {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    max-height: auto;
+    width: 100%;
+}
+
+/* Responsive styles for the header image */
+@media only screen and (max-width: 600px) {
+    .header-image {
+        height: 200px;
+    }
+}
+
+/* Styles for the post content */
+.post-content {
+    padding: 20px;
+}
+.post_image {
+    max-height: 300px;
+    max-width: 300px;
+    size: cover;
+}
+.read-more-button {
+    border: none;
+    background-color: #e74c3c;
+    border-radius: 5px;
+    color: white;
+}
+.add-new {
+    text-decoration: none;
+    background-color: #4caf50;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    float: right;
+    margin-bottom: 10px;
+}
+
+.post-share {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.post-share button {
+    border: none;
+    max-height: 50px;
+    max-height: 50px;
+}
